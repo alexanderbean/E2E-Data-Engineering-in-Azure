@@ -1,0 +1,27 @@
+{
+	"name": "onpremsqlserver",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"server": "DESKTOP-VSCM7DE\\SQLEXPRESS",
+			"database": "AdventureWorksLT2022",
+			"encrypt": "optional",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "dbdr",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "keyvault_e2e_de",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "localdb-password"
+			}
+		},
+		"connectVia": {
+			"referenceName": "SelfHostedIntegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
