@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adf-e2e-de"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://gen2e2ede.dfs.core.windows.net/"
+		},
+		"keyvault_e2e_de_properties_typeProperties_baseUrl": {
+			"value": "https://kv-e2e-de.vault.azure.net/"
+		},
+		"onpremsqlserver_properties_typeProperties_server": {
+			"value": "DESKTOP-VSCM7DE\\SQLEXPRESS"
+		},
+		"onpremsqlserver_properties_typeProperties_database": {
+			"value": "AdventureWorksLT2022"
+		},
+		"onpremsqlserver_properties_typeProperties_userName": {
+			"value": "dbdr"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
