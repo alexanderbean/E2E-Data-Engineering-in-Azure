@@ -11,6 +11,9 @@
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"value": "https://gen2e2ede.dfs.core.windows.net/"
 		},
+		"AzureDatabricks1_properties_typeProperties_existingClusterId": {
+			"value": "0714-153644-9703069z"
+		},
 		"keyvault_e2e_de_properties_typeProperties_baseUrl": {
 			"value": "https://kv-e2e-de.vault.azure.net/"
 		},
@@ -22,9 +25,6 @@
 		},
 		"onpremsqlserver_properties_typeProperties_userName": {
 			"value": "dbdr"
-		},
-		"AzureDatabricks1_properties_typeProperties_existingClusterId": {
-			"value": "0714-153644-9703069z"
 		}
 	}
 }

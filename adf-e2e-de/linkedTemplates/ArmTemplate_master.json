@@ -15,6 +15,10 @@
 			"type": "string",
 			"defaultValue": "https://gen2e2ede.dfs.core.windows.net/"
 		},
+		"AzureDatabricks1_properties_typeProperties_existingClusterId": {
+			"type": "string",
+			"defaultValue": "0714-153644-9703069z"
+		},
 		"keyvault_e2e_de_properties_typeProperties_baseUrl": {
 			"type": "string",
 			"defaultValue": "https://kv-e2e-de.vault.azure.net/"
@@ -30,10 +34,6 @@
 		"onpremsqlserver_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "dbdr"
-		},
-		"AzureDatabricks1_properties_typeProperties_existingClusterId": {
-			"type": "string",
-			"defaultValue": "0714-153644-9703069z"
 		},
 		"containerUri": {
 			"type": "string",
@@ -71,6 +71,9 @@
 					"keyvault_e2e_de_properties_typeProperties_baseUrl": {
 						"value": "[parameters('keyvault_e2e_de_properties_typeProperties_baseUrl')]"
 					},
+					"AzureDatabricks1_properties_typeProperties_existingClusterId": {
+						"value": "[parameters('AzureDatabricks1_properties_typeProperties_existingClusterId')]"
+					},
 					"onpremsqlserver_properties_typeProperties_server": {
 						"value": "[parameters('onpremsqlserver_properties_typeProperties_server')]"
 					},
@@ -79,9 +82,6 @@
 					},
 					"onpremsqlserver_properties_typeProperties_userName": {
 						"value": "[parameters('onpremsqlserver_properties_typeProperties_userName')]"
-					},
-					"AzureDatabricks1_properties_typeProperties_existingClusterId": {
-						"value": "[parameters('AzureDatabricks1_properties_typeProperties_existingClusterId')]"
 					}
 				}
 			},
