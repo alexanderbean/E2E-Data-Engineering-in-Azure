@@ -1,0 +1,12 @@
+{
+	"name": "SqlServerCopy",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "onpremsqlserver",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": []
+	}
+}
