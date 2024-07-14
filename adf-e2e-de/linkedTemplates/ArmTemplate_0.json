@@ -30,6 +30,10 @@
 		"onpremsqlserver_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "dbdr"
+		},
+		"AzureDatabricks1_properties_typeProperties_existingClusterId": {
+			"type": "string",
+			"defaultValue": "0714-153644-9703069z"
 		}
 	},
 	"variables": {
@@ -171,6 +175,30 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/integrationRuntimes/SelfHostedIntegrationRuntime')]",
+				"[concat(variables('factoryId'), '/linkedServices/keyvault_e2e_de')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureDatabricks1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureDatabricks",
+				"typeProperties": {
+					"domain": "https://adb-2690968036054434.14.azuredatabricks.net",
+					"accessToken": {
+						"type": "AzureKeyVaultSecret",
+						"store": {
+							"referenceName": "keyvault_e2e_de",
+							"type": "LinkedServiceReference"
+						},
+						"secretName": "dbwtoken"
+					},
+					"existingClusterId": "[parameters('AzureDatabricks1_properties_typeProperties_existingClusterId')]"
+				}
+			},
+			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/keyvault_e2e_de')]"
 			]
 		},
