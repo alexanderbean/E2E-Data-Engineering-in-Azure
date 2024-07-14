@@ -124,11 +124,11 @@
 					"location": {
 						"type": "AzureBlobFSLocation",
 						"fileName": {
-							"value": "@(concat(dataset().tablename,'.parquet'))",
+							"value": "@concat(dataset().tablename,'.parquet')",
 							"type": "Expression"
 						},
 						"folderPath": {
-							"value": "@(concat(dataset().schemaname, '/', dataset().tablename))",
+							"value": "@concat(dataset().schemaname, '/', dataset().tablename)",
 							"type": "Expression"
 						},
 						"fileSystem": "bronze"
