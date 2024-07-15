@@ -17,7 +17,7 @@ In this project, I used:
 - Azure Gen2 Data Lake Storage
 - Azure Data Factory
 - Azure Databricks
-- Microsoft SQL Server
+- On-prem SQL Server Database
 - SQL Server Management Studio (SSMS)
 - Azure Synapse Analytics
 - Serverless Azure SQL Database
