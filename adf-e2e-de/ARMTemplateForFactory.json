@@ -179,7 +179,7 @@
 						},
 						"userProperties": [],
 						"typeProperties": {
-							"notebookPath": "/Shared/bronze to silver"
+							"notebookPath": "/Repos/alexanderbean6601@gmail.com/E2E-Data-Engineering-in-Azure/databricks-notebooks/bronze to silver"
 						},
 						"linkedServiceName": {
 							"referenceName": "AzureDatabricks1",
@@ -206,7 +206,7 @@
 						},
 						"userProperties": [],
 						"typeProperties": {
-							"notebookPath": "/Shared/silver to gold"
+							"notebookPath": "/Repos/alexanderbean6601@gmail.com/E2E-Data-Engineering-in-Azure/databricks-notebooks/silver to gold"
 						},
 						"linkedServiceName": {
 							"referenceName": "AzureDatabricks1",
@@ -217,7 +217,8 @@
 				"policy": {
 					"elapsedTimeMetric": {}
 				},
-				"annotations": []
+				"annotations": [],
+				"lastPublishTime": "2024-07-14T21:36:42Z"
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/SqlDBTables')]",
@@ -288,7 +289,8 @@
 				"policy": {
 					"elapsedTimeMetric": {}
 				},
-				"annotations": []
+				"annotations": [],
+				"lastPublishTime": "2024-07-13T23:42:29Z"
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/address')]",
@@ -544,17 +546,6 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/SelfHostedIntegrationRuntime')]",
-			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"type": "SelfHosted",
-				"description": "Used to connect SQL Server",
-				"typeProperties": {}
-			},
-			"dependsOn": []
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/scheduled_trigger')]",
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
@@ -593,6 +584,17 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/pipelines/copy_all_tables')]"
 			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SelfHostedIntegrationRuntime')]",
+			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "SelfHosted",
+				"description": "Used to connect SQL Server",
+				"typeProperties": {}
+			},
+			"dependsOn": []
 		}
 	]
 }

@@ -438,7 +438,7 @@
 						},
 						"userProperties": [],
 						"typeProperties": {
-							"notebookPath": "/Shared/bronze to silver"
+							"notebookPath": "/Repos/alexanderbean6601@gmail.com/E2E-Data-Engineering-in-Azure/databricks-notebooks/bronze to silver"
 						},
 						"linkedServiceName": {
 							"referenceName": "AzureDatabricks1",
@@ -465,7 +465,7 @@
 						},
 						"userProperties": [],
 						"typeProperties": {
-							"notebookPath": "/Shared/silver to gold"
+							"notebookPath": "/Repos/alexanderbean6601@gmail.com/E2E-Data-Engineering-in-Azure/databricks-notebooks/silver to gold"
 						},
 						"linkedServiceName": {
 							"referenceName": "AzureDatabricks1",
@@ -476,7 +476,8 @@
 				"policy": {
 					"elapsedTimeMetric": {}
 				},
-				"annotations": []
+				"annotations": [],
+				"lastPublishTime": "2024-07-14T21:36:42Z"
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/SqlDBTables')]",
@@ -547,7 +548,8 @@
 				"policy": {
 					"elapsedTimeMetric": {}
 				},
-				"annotations": []
+				"annotations": [],
+				"lastPublishTime": "2024-07-13T23:42:29Z"
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/address')]",
