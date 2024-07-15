@@ -11,7 +11,7 @@ The dataset used was the Microsoft lightweight AdventureWorksLT2022 set: https:/
 
 In this project, I used:
 
-- Azure Gen2 Data Lake Storage
+- Azure Data Lake Storage Gen 2
 - Azure Data Factory
 - Azure Databricks
 - On-prem SQL Server Database
@@ -22,7 +22,19 @@ In this project, I used:
 - Azure Key Vault
 - Power BI Desktop
 
-These are the major steps I took in creating this end-to-end project:
+# These are the major steps I took in creating this end-to-end project:
+
+On-Prem SQL Server Database:
+
+
+Microsoft Azure:
+- Created resource group
+- Created resources: Azure Data Lake Storage Gen2
+- In Azure Data Lake Storage Gen2: I created the storage containers for the Bronze, Silver, and Gold layers.
+- In Azure Data Factory (ADF): I engineered the pipelines to extract the data from the on-prem database and to execute the Databricks notebooks, as well as created linked services to support the flow of data through the pipeline.
+- In Azure Databricks: 
+
+Power BI:
 
 - 
 - I connected Azure Data Factory, Azure Databricks, and Synapse Analytics to this Git repository for audit records and to have a centralized location to run processes from.
