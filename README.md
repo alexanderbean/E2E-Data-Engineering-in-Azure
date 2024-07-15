@@ -25,7 +25,8 @@ In this project, I used:
 # Project Steps
 
 On-Prem SQL Server Database:
-- Before starting on the cloud, I downloaded set up SQL Server Management Studio
+- Before starting on the cloud, I installed SQL Server Express to host the local server and set up SQL Server Management Studio.
+- I also downloaded the Java Runtime Environment (JRE) to support the Parquet format.
 
 Github:
 - I created this repository to track the progression of the project.
@@ -38,6 +39,8 @@ Microsoft Azure:
 - In Azure Data Factory (ADF): I engineered the pipelines to extract the data from the on-prem database and to execute the Databricks notebooks, as well as created linked services to support the flow of data through the pipeline.
 - In Azure Databricks: I made three notebooks to
 - In Azure Synapse Analytics: I utilized a stored procedure to load the Gold layer data from the data lake to a Serverless SQL Database instance.
+- Azure Key Vault: I assigned secrets to the login and password of the local SQL database to be used in linked services in Azure Data Factory.
+- Azure Entra ID: I created and assigned permissions to a security group to abide by data governance best practices and ensure data can only be accessed by those within the group.
 
 Power BI:
 
