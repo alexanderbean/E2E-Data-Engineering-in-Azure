@@ -553,6 +553,45 @@
 				"[concat(variables('factoryId'), '/datasets/address')]",
 				"[concat(variables('factoryId'), '/datasets/address_parquet')]"
 			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/trigger1')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Started",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "copy_all_tables",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					}
+				],
+				"type": "ScheduleTrigger",
+				"typeProperties": {
+					"recurrence": {
+						"frequency": "Day",
+						"interval": 1,
+						"startTime": "2024-07-15T12:39:00",
+						"endTime": "2024-07-16T12:39:00",
+						"timeZone": "Eastern Standard Time",
+						"schedule": {
+							"minutes": [
+								55
+							],
+							"hours": [
+								12
+							]
+						}
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/copy_all_tables')]"
+			]
 		}
 	]
 }
