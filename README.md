@@ -1,4 +1,4 @@
-# e2e-de-azure
+# End-to-End ETL Pipeline in Microsoft Azure - (e2e-de-azure)
 
 This is my first data engineering project and my first non-academic project.
 
