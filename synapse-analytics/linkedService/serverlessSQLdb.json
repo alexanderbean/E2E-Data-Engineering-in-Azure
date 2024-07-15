@@ -7,7 +7,7 @@
 			"server": "synw-e2e-de-ondemand.sql.azuresynapse.net",
 			"database": "gold_db",
 			"encrypt": "optional",
-			"trustServerCertificate": false,
+			"trustServerCertificate": true,
 			"authenticationType": "SystemAssignedManagedIdentity"
 		},
 		"connectVia": {
