@@ -14,5 +14,6 @@
 				"fileSystem": "gold"
 			}
 		}
-	}
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
 }
