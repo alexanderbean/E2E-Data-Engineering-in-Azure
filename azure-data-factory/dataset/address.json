@@ -52,5 +52,6 @@
 			"schema": "SalesLT",
 			"table": "Address"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

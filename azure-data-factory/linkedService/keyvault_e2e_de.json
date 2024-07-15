@@ -1,5 +1,6 @@
 {
 	"name": "keyvault_e2e_de",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
 		"annotations": [],
 		"type": "AzureKeyVault",
