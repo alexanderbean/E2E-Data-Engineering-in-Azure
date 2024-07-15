@@ -22,17 +22,22 @@ In this project, I used:
 - Azure Key Vault
 - Power BI Desktop
 
-# These are the major steps I took in creating this end-to-end project:
+# Project Steps
 
 On-Prem SQL Server Database:
+- Before starting on the cloud, I downloaded set up SQL Server Management Studio
 
+Github:
+- I created this repository to track the progression of the project.
+- When Azure Data Factory, Azure Databricks, and Azure Synapse Analytics were created: I completed Git configuration within the instances so any changes or publishes were pushed to a branch for easy audit/documentation.
 
 Microsoft Azure:
-- Created resource group
+- Once in Azure, I established the resource group to house all the resources for the project.
 - Created resources: Azure Data Lake Storage Gen2
 - In Azure Data Lake Storage Gen2: I created the storage containers for the Bronze, Silver, and Gold layers.
 - In Azure Data Factory (ADF): I engineered the pipelines to extract the data from the on-prem database and to execute the Databricks notebooks, as well as created linked services to support the flow of data through the pipeline.
-- In Azure Databricks: 
+- In Azure Databricks: I made three notebooks to
+- In Azure Synapse Analytics: I utilized a stored procedure to load the Gold layer data from the data lake to a Serverless SQL Database instance.
 
 Power BI:
 
