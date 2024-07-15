@@ -12,14 +12,6 @@
 			"metadata": "Secure string for 'connectionString' of 'synw-e2e-de-WorkspaceDefaultSqlServer'",
 			"defaultValue": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:synw-e2e-de.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
 		},
-		"serverlessSQLdb_properties_typeProperties_server": {
-			"type": "string",
-			"defaultValue": "synw-e2e-de-ondemand.sql.azuresynapse.net"
-		},
-		"serverlessSQLdb_properties_typeProperties_database": {
-			"type": "string",
-			"defaultValue": "gold_db"
-		},
 		"synw-e2e-de-WorkspaceDefaultStorage_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://gen2e2ede.dfs.core.windows.net"
@@ -29,150 +21,6 @@
 		"workspaceId": "[concat('Microsoft.Synapse/workspaces/', parameters('workspaceName'))]"
 	},
 	"resources": [
-		{
-			"name": "[concat(parameters('workspaceName'), '/Create view')]",
-			"type": "Microsoft.Synapse/workspaces/pipelines",
-			"apiVersion": "2019-06-01-preview",
-			"properties": {
-				"activities": [
-					{
-						"name": "Get Tablenames",
-						"type": "GetMetadata",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "0.12:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"dataset": {
-								"referenceName": "gold_tables",
-								"type": "DatasetReference",
-								"parameters": {}
-							},
-							"fieldList": [
-								"childItems"
-							],
-							"storeSettings": {
-								"type": "AzureBlobFSReadSettings",
-								"recursive": true,
-								"enablePartitionDiscovery": false
-							},
-							"formatSettings": {
-								"type": "BinaryReadSettings"
-							}
-						}
-					},
-					{
-						"name": "For each table name",
-						"type": "ForEach",
-						"dependsOn": [
-							{
-								"activity": "Get Tablenames",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"userProperties": [],
-						"typeProperties": {
-							"items": {
-								"value": "@activity('Get Tablenames').output.childItems",
-								"type": "Expression"
-							},
-							"activities": [
-								{
-									"name": "Stored procedure1",
-									"type": "SqlServerStoredProcedure",
-									"dependsOn": [],
-									"policy": {
-										"timeout": "0.12:00:00",
-										"retry": 0,
-										"retryIntervalInSeconds": 30,
-										"secureOutput": false,
-										"secureInput": false
-									},
-									"userProperties": [],
-									"typeProperties": {
-										"storedProcedureName": "[dbo].[CreateSQLServerlessView_gold]",
-										"storedProcedureParameters": {
-											"ViewName": {
-												"value": {
-													"value": "@item().name",
-													"type": "Expression"
-												},
-												"type": "String"
-											}
-										}
-									},
-									"linkedServiceName": {
-										"referenceName": "serverlessSQLdb",
-										"type": "LinkedServiceReference"
-									}
-								}
-							]
-						}
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {}
-				},
-				"annotations": []
-			},
-			"dependsOn": [
-				"[concat(variables('workspaceId'), '/datasets/gold_tables')]",
-				"[concat(variables('workspaceId'), '/linkedServices/serverlessSQLdb')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('workspaceName'), '/gold_tables')]",
-			"type": "Microsoft.Synapse/workspaces/datasets",
-			"apiVersion": "2019-06-01-preview",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "synw-e2e-de-WorkspaceDefaultStorage",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "Binary",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobFSLocation",
-						"folderPath": "SalesLT",
-						"fileSystem": "gold"
-					}
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('workspaceId'), '/linkedServices/synw-e2e-de-WorkspaceDefaultStorage')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('workspaceName'), '/serverlessSQLdb')]",
-			"type": "Microsoft.Synapse/workspaces/linkedServices",
-			"apiVersion": "2019-06-01-preview",
-			"properties": {
-				"annotations": [],
-				"type": "AzureSqlDatabase",
-				"typeProperties": {
-					"server": "[parameters('serverlessSQLdb_properties_typeProperties_server')]",
-					"database": "[parameters('serverlessSQLdb_properties_typeProperties_database')]",
-					"encrypt": "optional",
-					"trustServerCertificate": true,
-					"authenticationType": "SystemAssignedManagedIdentity"
-				},
-				"connectVia": {
-					"referenceName": "AutoResolveIntegrationRuntime",
-					"type": "IntegrationRuntimeReference"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('workspaceId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]"
-			]
-		},
 		{
 			"name": "[concat(parameters('workspaceName'), '/synw-e2e-de-WorkspaceDefaultSqlServer')]",
 			"type": "Microsoft.Synapse/workspaces/linkedServices",
@@ -242,26 +90,6 @@
 			"properties": {
 				"type": "ManagedIdentity",
 				"typeProperties": {}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('workspaceName'), '/sp_CreateSQLServerlessView_gold')]",
-			"type": "Microsoft.Synapse/workspaces/sqlscripts",
-			"apiVersion": "2019-06-01-preview",
-			"properties": {
-				"content": {
-					"query": "USE gold_db\nGO\n\nCREATE OR ALTER PROC CreateSQLServerlessView_gold  @ViewName nvarchar(100)\nAS\nBEGIN\n\nDECLARE @statement VARCHAR(MAX)\n\n     SET @statement = N'CREATE OR ALTER VIEW ' + @ViewName + ' AS\n        SELECT *\n        FROM\n            OPENROWSET(\n            BULK ''https://gen2e2ede.dfs.core.windows.net/gold/SalesLT' + @ViewName + '/'',\n            FORMAT = ''DELTA''\n        ) as [result]\n    '\n\n\nEXEC (@statement)\n\nEND\nGO",
-					"metadata": {
-						"language": "sql"
-					},
-					"currentConnection": {
-						"databaseName": "gold_db",
-						"poolName": "Built-in"
-					},
-					"resultLimit": 5000
-				},
-				"type": "SqlQuery"
 			},
 			"dependsOn": []
 		}
