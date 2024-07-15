@@ -29,4 +29,4 @@ These are the major steps I took in creating this end-to-end project:
 
 - 
 
-https://app.powerbi.com/reportEmbed?reportId=1acf642e-4e67-4e62-bc9f-23ced8921180&autoAuth=true&ctid=61dc8969-454c-42ba-8bac-44f842fcbc7f
+<iframe title="pbi-e2e-de" width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=1acf642e-4e67-4e62-bc9f-23ced8921180&autoAuth=true&ctid=61dc8969-454c-42ba-8bac-44f842fcbc7f" frameborder="0" allowFullScreen="true"></iframe>
