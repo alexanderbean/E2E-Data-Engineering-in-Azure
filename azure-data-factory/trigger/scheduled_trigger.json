@@ -1,6 +1,7 @@
 {
-	"name": "trigger1",
+	"name": "scheduled_trigger",
 	"properties": {
+		"description": "Pulls updated information from the local database through the pipeline. Ensures the PowerBI dashboard has the most current information.",
 		"annotations": [],
 		"runtimeState": "Started",
 		"pipelines": [
