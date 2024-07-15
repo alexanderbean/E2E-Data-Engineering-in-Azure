@@ -555,10 +555,11 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/trigger1')]",
+			"name": "[concat(parameters('factoryName'), '/scheduled_trigger')]",
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
 			"properties": {
+				"description": "Pulls updated information from the local database through the pipeline. Ensures the PowerBI dashboard has the most current information.",
 				"annotations": [],
 				"runtimeState": "Started",
 				"pipelines": [
