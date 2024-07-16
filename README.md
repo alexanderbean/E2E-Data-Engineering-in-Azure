@@ -1,6 +1,6 @@
 # End-to-End ETL Pipeline in Microsoft Azure - (e2e-de-azure)
 
-This is my first complete data engineering project and my first non-academic project. In this project, I created an end-to-end ETL pipeline starting from an on-prem SQL Server Database, moving into the Azure cloud, and ending with a Power BI dashboard/report.
+This is my first complete end-to-end data engineering project. In this project, I created an end-to-end ETL pipeline starting from an on-prem SQL Server Database, moving into the Azure cloud, and ending with a Power BI dashboard/report.
 
 My goals for this project were:
 - To gather a general understanding of what makes a data engineering pipeline,
@@ -34,12 +34,12 @@ Github:
 
 Microsoft Azure:
 - Once in Azure, I established the resource group to house all the resources for the project.
-- Created resources: Azure Data Lake Storage Gen2
-- In Azure Data Lake Storage Gen2: I created the storage containers for the Bronze, Silver, and Gold layers.
-- In Azure Data Factory (ADF): I engineered the pipelines to extract the data from the on-prem database and to execute the Databricks notebooks, as well as created linked services to support the flow of data through the pipeline.
-- In Azure Databricks: I made three notebooks to
-- In Azure Synapse Analytics: I utilized a stored procedure to load the Gold layer data from the data lake to a Serverless SQL Database instance.
+- I then created the following resources: Azure Data Lake Storage Gen2, Azure Key Vault, Azure Data Factory (ADF), Azure Databricks, and Azure Synapse Analytics.
+- Azure Data Lake Storage Gen2: I created the storage containers for the Bronze, Silver, and Gold layers.
 - Azure Key Vault: I assigned secrets to the login and password of the local SQL database to be used in linked services in Azure Data Factory.
+- Azure Data Factory (ADF): I engineered the pipelines to extract the data from the on-prem database and to execute the Databricks notebooks, as well as created linked services to support the flow of data through the pipeline.
+- Azure Databricks: I made three notebooks to house pySpark scripts to mount the storage containers from the data lake and transformed data from the Bronze to Silver layer and Silver to Gold layer.
+- Azure Synapse Analytics: I utilized a stored procedure to load the Gold layer data from the data lake to a Serverless SQL Database instance.
 - Azure Entra ID: I created and assigned permissions to a security group to abide by data governance best practices and ensure data can only be accessed by those within the group.
 
 Power BI:
