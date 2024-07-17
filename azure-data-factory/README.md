@@ -1,4 +1,4 @@
-# Azure Data Factory - adf-e2e-de
+# Azure Data Factory - (adf-e2e-de)
 
 Azure Data Factory was the tool used to engineer most of the extract/transform/load (ETL) pipeline.
 
@@ -15,5 +15,7 @@ Azure Data Factory was the tool used to engineer most of the extract/transform/l
 **Load:**
 - The load piece was completed by Azure Synapse Analytics
 - The Gold layer data was loaded into a serverless SQL database.
+
+Additionally, a trigger was created to run this pipeline daily--completely automating the refinement of new row/column data.
 
 ![adf-pipeline](https://github.com/user-attachments/assets/124ab5d1-e781-4229-9f0b-3dce0bc3806f)
