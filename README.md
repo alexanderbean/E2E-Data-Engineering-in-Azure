@@ -7,7 +7,7 @@ My goals for this project were:
 - To gain hands-on experience with the Azure cloud platform and offered services, and
 - To produce a functional and stable end product to showcase on GitHub and my resume.
 
-The dataset used was one of Microsoft's sample lightweight datasets: [AdventureWorksLT2022](https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorksLT2022.bak)
+For a data source, I used one of Microsoft's sample lightweight datasets: [AdventureWorksLT2022](https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorksLT2022.bak)
 
 ![azurediagram2](https://github.com/user-attachments/assets/c84689e4-8ff1-4894-82eb-f295b5741952)
 
