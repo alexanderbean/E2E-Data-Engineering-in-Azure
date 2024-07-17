@@ -22,6 +22,8 @@ In this project, I used:
 - Azure Key Vault
 - Power BI Desktop
 
+[azurediagram.pdf](https://github.com/user-attachments/files/16266521/azurediagram.pdf)
+
 # Project Steps
 
 On-Prem SQL Server Database:
