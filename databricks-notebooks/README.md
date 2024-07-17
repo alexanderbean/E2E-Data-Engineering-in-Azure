@@ -2,4 +2,4 @@
 
 This folder hosts the Databricks notebooks used in the Transformation step of the ETL pipeline.
 
-![gen2-e2e-de-dash](https://github.com/user-attachments/assets/f9fc5627-0131-43f5-85dc-d69c1bc15336)
+![databricks-notebook](https://github.com/user-attachments/assets/f138e3fa-4bf6-4c2e-9156-7511f192d9e8)
