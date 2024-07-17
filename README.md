@@ -22,7 +22,7 @@ In this project, I used:
 - Azure Key Vault
 - Power BI Desktop
 
-![azurediagram2](https://github.com/user-attachments/assets/a5c0f036-bba5-481d-8522-f5c3314913b9)
+![azurediagram2](https://github.com/user-attachments/assets/c84689e4-8ff1-4894-82eb-f295b5741952)
 
 # Project Steps
 
