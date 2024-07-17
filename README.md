@@ -9,19 +9,6 @@ My goals for this project were:
 
 The dataset used was the Microsoft lightweight AdventureWorksLT2022 set: https://learn.microsoft.com/en-us/sql/samples/adventureworks-install-configure?view=sql-server-ver16&tabs=ssms
 
-In this project, I used:
-
-- Azure Data Lake Storage Gen 2
-- Azure Data Factory
-- Azure Databricks
-- On-prem SQL Server Database
-- SQL Server Management Studio (SSMS)
-- Azure Synapse Analytics
-- Serverless Azure SQL Database
-- Azure Entra ID (prev. known as Azure Active Directory)
-- Azure Key Vault
-- Power BI Desktop
-
 ![azurediagram2](https://github.com/user-attachments/assets/c84689e4-8ff1-4894-82eb-f295b5741952)
 
 # Project Steps
@@ -42,7 +29,7 @@ Microsoft Azure:
 - Azure Data Factory (ADF): I engineered the pipelines to extract the data from the on-prem database and to execute the Databricks notebooks, as well as created linked services to support the flow of data through the pipeline.
 - Azure Databricks: I made three notebooks to house pySpark scripts to mount the storage containers from the data lake and transformed data from the Bronze to Silver layer and Silver to Gold layer.
 - Azure Synapse Analytics: I utilized a stored procedure to load the Gold layer data from the data lake to a Serverless SQL Database instance.
-- Azure Entra ID: I created and assigned permissions to a security group to abide by data governance best practices and ensure data can only be accessed by those within the group.
+- Azure Entra ID (formerly known as Azure Active Directory): I created and assigned permissions to a security group to abide by data governance best practices and ensure data can only be accessed by those within the group.
 
 Power BI:
 
