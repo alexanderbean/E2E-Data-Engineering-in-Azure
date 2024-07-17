@@ -1,6 +1,6 @@
 # Azure Data Factory - adf-e2e-de
 
-Azure Data Factory was the tool used to engineer more of the extract/transform/load (ETL) pipeline.
+Azure Data Factory was the tool used to engineer most of the extract/transform/load (ETL) pipeline.
 
 **Extract:**
 - Connected to the local SQL server database using the Key Vault secrets assigned for the username and password.
