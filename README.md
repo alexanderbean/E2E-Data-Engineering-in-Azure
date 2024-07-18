@@ -9,7 +9,7 @@ My goals for this project were:
 
 For a data source, I used one of Microsoft's sample lightweight datasets: [AdventureWorksLT2022](https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorksLT2022.bak)
 
-![azurediagram2](https://github.com/user-attachments/assets/c84689e4-8ff1-4894-82eb-f295b5741952)
+![azurediagram](https://github.com/user-attachments/assets/df2c0dc6-49de-412f-b4b9-f0aa63f74b7f)
 
 # Project Steps
 
