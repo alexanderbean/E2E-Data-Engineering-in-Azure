@@ -3,7 +3,7 @@
 This is my first complete end-to-end data engineering project. In this project, I created an end-to-end ETL pipeline starting from an on-prem SQL Server Database, moving into the Azure cloud, and ending with a Power BI dashboard/report.
 
 My goals for this project were:
-- To gather a general understanding of what makes a data engineering pipeline,
+- To develop a general understanding of data engineering and pipeline creation,
 - To gain hands-on experience with the Azure cloud platform and offered services, and
 - To produce a functional and stable end product to showcase on GitHub and my resume.
 
